@@ -1,0 +1,130 @@
+<section class="home">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-9 col-lg-8 col-md-12">
+        <div class="top_text">
+          التقويم
+          <div class="background">
+            <img class="img-fluid" src="assets/Rectangle 4.svg" />
+          </div>
+        </div>
+        <div class="_body_day d-flex">
+          <div class="_day" *ngFor="let item of days" [ngClass]="item.class">
+            <div class="_day_top">
+              <div>{{ item.number_day }}</div>
+              <div class="_day_name">{{ item.name_ar }}</div>
+            </div>
+            <div class="_day_bottom">
+              <div>6</div>
+              <div class="_day_name">المهام</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4 col-md-12">
+        <div class="top_text text-center">
+          شهر {{ this.months[this.month_number]?.name_ar }} , {{ year }}
+        </div>
+
+        <div class="_month_part">
+          <div class="_head">
+            <div class="_arrow">
+              <img
+                class="img-fluid _arrow_up"
+                src="assets/Group 394.svg"
+                (click)="AddYear()"
+              />
+              <img
+                class="img-fluid _arrow_down"
+                src="assets/Path 745.svg"
+                (click)="MinYear()"
+              />
+            </div>
+            <div class="_year">{{ year }}</div>
+          </div>
+          <div class="_body_month">
+            <div class="row">
+              <div
+                class="col-md-4 py-1"
+                *ngFor="let item of months; let i = index"
+              >
+                <div
+                  class="text-center _text"
+                  (click)="AddActive(item, i)"
+                  [ngClass]="{ active: item.active }"
+                >
+                  {{ item.name_ar }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="part-process">
+      <div class="d-flex header w-100">
+        <div class="col-lg-3 res_time">
+          <div class="d-flex">
+            <div class="col-6 text-start ps-4">من</div>
+            <div class="col-6 pe-4">الي</div>
+          </div>
+        </div>
+        <div class="col-lg-4 pe-3 res_time">الجلسة</div>
+        <div class="col-lg-2 pe-3 res">عدد المقاعد</div>
+        <div class="col-lg-2 pe-3 res">المستخدمين</div>
+        <div class="col-lg-1 pe-3 res"></div>
+      </div>
+      <div class="d-flex body_of_process">
+        <div class="col-lg-3 res_time">
+          <div class="d-flex">
+            <div class="col-6 ps-4">
+              <div class="time time_from">
+                10:00:00 ص
+                <img class="img-fluid arrow_up" src="assets/Group 404.svg" />
+                <img class="img-fluid arrow_down" src="assets/Group 401.svg" />
+              </div>
+            </div>
+            <div class="col-6 pe-4">
+              <div class="time time_to">
+                10:00:00 ص
+                <img class="img-fluid arrow_up" src="assets/Group 404.svg" />
+                <img class="img-fluid arrow_down" src="assets/Group 401.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 pe-3 res_time">
+          <div class="form-group record">
+            <input
+              type="text"
+              class="form-control form_record"
+              name=""
+              id=""
+              aria-describedby="helpId"
+              value="سيشن التصوير الفوتوغرافي"
+              placeholder="اسم الجلسة"
+            />
+
+            <img class="img-fluid edit" src="assets/Group 273.svg" />
+          </div>
+        </div>
+        <div class="col-lg-2 pe-3 res">
+          <div class="number_set">
+            50
+
+            <img class="img-fluid arrow_up" src="assets/Group 404.svg" />
+            <img class="img-fluid arrow_down" src="assets/Group 401.svg" />
+          </div>
+        </div>
+        <div class="col-lg-2 pe-3 res"><div class="number_user">49</div></div>
+        <div class="col-lg-1 pe-3 res">
+          <div class="delete d-flex">
+            <img class="img-fluid ms-1" src="assets/Path 747.svg" />
+            حذف
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

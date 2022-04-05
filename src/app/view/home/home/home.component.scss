@@ -1,0 +1,332 @@
+.home {
+    padding-inline: 6rem;
+    padding-top: 2rem;
+    .top_text {
+        color: #0a0094;
+        font-size: 35px;
+        font-weight: bold;
+        position: relative;
+        margin-block: 2rem;
+        .background {
+            position: absolute;
+            bottom: 14%;
+            right: 1%;
+            z-index: -1;
+            display: flex;
+        }
+    }
+    ._body_day {
+        flex-wrap: wrap;
+
+        ._day {
+            margin-inline: 0.5rem;
+            margin-block: 0.5rem;
+            min-width: 100px;
+            border-radius: 10px;
+            /* border: 1px solid black; */
+            /* padding: 0.5rem; */
+            padding-block: 0.5rem;
+            padding-inline: 1rem;
+            ._day_top {
+                color: #0a0094;
+                display: flex;
+                align-items: baseline;
+                ._day_name {
+                    margin-inline-start: 0.4rem;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+            }
+            ._day_bottom {
+                margin-block: 0.3rem;
+                color: #0a0094;
+                display: flex;
+                align-items: baseline;
+                ._day_name {
+                    margin-inline-start: 0.4rem;
+                    font-weight: bold;
+                    font-size: 13px;
+                }
+            }
+
+            &.day_1 {
+                background-color: #ebfaf4;
+                ._day_bottom {
+                    color: #3fb1b5;
+                }
+            }
+            &.day_2 {
+                background-color: #fdf9f4;
+                ._day_bottom {
+                    color: #ffb677;
+                }
+            }
+            &.day_3 {
+                background-color: #dcfcff;
+                ._day_bottom {
+                    color: #00ddff;
+                }
+            }
+            &.day_4 {
+                background-color: #f4f5fd;
+                ._day_bottom {
+                    color: #1766ff;
+                }
+            }
+            &.day_5 {
+                background-color: #fdeffe;
+                ._day_bottom {
+                    color: #eea6e0;
+                }
+            }
+            &.day_6 {
+                background-color: #fef9e4;
+                ._day_bottom {
+                    color: #f3bf0c;
+                }
+            }
+            &.day_7 {
+                background-color: #fef0ef;
+                ._day_bottom {
+                    color: #eea6af;
+                }
+            }
+        }
+    }
+    ._month_part {
+        border-radius: 10px;
+        border: 1px solid #1766ff;
+
+        ._head {
+            display: flex;
+            justify-content: space-between;
+            background-color: #1766ff;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            ._year {
+            }
+            ._arrow {
+                img {
+                    cursor: pointer;
+                }
+                ._arrow_down {
+                    margin-inline: 0.5rem;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+        ._body_month {
+            padding: 1rem;
+            ._text {
+                color: #0a0094;
+                padding: 0.3rem;
+                cursor: pointer;
+                &:hover {
+                    background-color: #1766ff;
+                    color: white;
+                    border-radius: 0.5rem;
+                }
+                &.active {
+                    background-color: #1766ff;
+                    color: white;
+                    border-radius: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .part-process {
+        overflow-y: hidden;
+        overflow-x: auto;
+        margin-block: 2rem;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            border-left: 3px dotted #e0e0e0;
+            top: 0;
+            height: 100%;
+
+            right: 9rem;
+        }
+        .body_of_process {
+            margin-top: 1rem;
+            position: relative;
+            .time {
+                padding-inline: 0.5rem;
+                padding-block: 0.5rem;
+                padding-inline-end: 1rem;
+                position: relative;
+                border-radius: 10px;
+                border: 1px solid #e0e0e0;
+                color: #1766ff;
+                .arrow_up {
+                    position: absolute;
+                    top: 0rem;
+                    left: 0.2rem;
+                    width: 20px;
+                    cursor: pointer;
+                }
+                .arrow_down {
+                    position: absolute;
+                    bottom: 0rem;
+                    left: 0.2rem;
+                    width: 20px;
+                    cursor: pointer;
+                }
+                &.time_to {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 9rem;
+                        width: 15px;
+                        height: 15px;
+                        background-color: #1766ff;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            .record {
+                position: relative;
+                .form_record {
+                    padding-block: 0.5rem;
+                    padding-inline-start: 0.8rem;
+                    padding-inline-end: 2rem;
+                    border: 1px solid #e0e0e0;
+                    border-radius: 10px;
+                    color: #1766ff;
+                }
+                .edit {
+                    position: absolute;
+                    left: 0.5rem;
+                    top: 0.4rem;
+                    cursor: pointer;
+                }
+            }
+
+            .number_set {
+                border: 1px solid #e0e0e0;
+                color: #1766ff;
+                padding-block: 0.5rem;
+                padding-inline-start: 0.8rem;
+                padding-inline-end: 2rem;
+                width: fit-content;
+                border-radius: 10px;
+                position: relative;
+                .arrow_up {
+                    position: absolute;
+                    top: 0rem;
+                    left: 0.2rem;
+                    width: 20px;
+                    cursor: pointer;
+                }
+                .arrow_down {
+                    position: absolute;
+                    bottom: 0rem;
+                    left: 0.2rem;
+                    width: 20px;
+                    cursor: pointer;
+                }
+            }
+            .number_user {
+                background-color: #1766ff;
+                padding: 1rem;
+                padding-block: 0.5rem;
+                width: fit-content;
+                border-radius: 10px;
+                color: white;
+            }
+            .delete {
+                color: #ff0000;
+                border-radius: 10px;
+                border: 1px solid #ff0000;
+                padding-inline: 0.8rem;
+                padding-block: 0.5rem;
+                justify-content: center;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .home {
+        padding-inline: 1rem;
+        .res {
+            min-width: 200px;
+        }
+        .res_time {
+            min-width: 300px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .home {
+        padding-inline: 2rem;
+
+        .res {
+            min-width: 200px;
+        }
+        .res_time {
+            min-width: 300px;
+        }
+    }
+}
+
+@media only screen and (min-width: 990px) and (max-width: 1200px) {
+    .home {
+        padding-inline: 5rem;
+        .res {
+            min-width: 200px;
+        }
+        .res_time {
+            min-width: 300px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1300px) {
+    .home {
+        padding-inline: 7rem;
+    }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1480px) {
+    .home {
+        padding-inline: 7rem;
+    }
+}
+
+@media only screen and (min-width: 1480px) {
+    .home {
+        padding-inline: 7rem;
+        .part-process {
+            &::before {
+                content: "";
+                position: absolute;
+                border-left: 3px dotted #e0e0e0;
+                top: 0;
+                height: 100%;
+
+                right: 9.9rem;
+            }
+            .body_of_process {
+                .time {
+                    &.time_to {
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 9.38rem;
+                            width: 15px;
+                            height: 15px;
+                            background-color: #1766ff;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
